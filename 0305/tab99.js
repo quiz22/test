@@ -10,3 +10,7 @@ let tab99 = function(){
     return rs;
 }
 module.exports = tab99;
+module.exports = {
+    down99 : tab99,
+    up99 : gettab99
+}
