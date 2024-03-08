@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>非阻塞</title>
+</head>
+<body>
+    <script>
+        var img = new Image();
+        var callback = function(w,h){
+            console.log(w,h);
+        }
+        img.onload = function(){
+            callback(img.width,img.height);
+            document.body.appendChild(img);
+        }
+        img.addEventListener('click',function(){
+            console.log('你单击我了！');
+        })
+        img.src = 'logo.jpg'
+    </script>
+</body>
+</html>
