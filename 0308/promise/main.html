@@ -5,7 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<script src="./jquery.js"></script>
 <body>
-    
+    <script>
+        function request(option){
+            var def = $.Deferred();
+            if(!option || !option.url){
+                throw Error('url is undefine');
+            }
+            var _config = {
+                type: 'get',
+                dataType: 'JSON',
+                success: function(){
+                    def.resolve(data);
+                },
+                error: function(a,b,err){
+                    def.reject(err);
+                }
+            }
+            $.extend(_config,option,true);
+            $.ajax(_config);
+            return def.progress();
+        }
+        var option = {
+            url: './city.json'
+        }
+        request(option).then(function(data){
+            console.log(data);
+        },function(err){
+            console.log(err);
+        });
+    </script>
 </body>
 </html>
