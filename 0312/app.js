@@ -36,3 +36,5 @@ function modifyOrders(key){
 function delOrders(key){
     
 }
+
+addOrder(goods);
