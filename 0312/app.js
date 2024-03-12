@@ -10,6 +10,20 @@ function readOrders(orders){
     });
 }
 readOrders(orders);
+
+let goods =[
+    {
+        gId:'003',
+        goodName:'大疆无人机',
+        gPrice: 5888
+    },
+    {
+        gId:'004',
+        goodName:'比亚迪海豹',
+        gPrice: 225888
+    }
+]
+
 //添加数据到文件中
 function addOrder(orders){
 
