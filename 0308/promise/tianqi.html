@@ -69,12 +69,12 @@
         var str = '';
         for(var d of data.data){
             str += '<tr>';
-            str += '<td>'+ d.data +'</td>';
+            str += '<td>'+ d.date +'</td>';
             str += '<td>'+ d.wea +'</td>';
             str += '<td>最低温度'+ d.tem2 +'℃,最高温度:'+ d.tem1+'</td>';
             str += '<td>'+ d.win_speed +'</td>';
             str += '<td>'+ d.air_level +'</td>';
-            str += '<td>'+ d.air_tips +'</td>';
+            str += '<td>' + (d.air_tips ? d.air_tips : '无建议') + '</td>';
         }
         $('#tab').html(str);
 
