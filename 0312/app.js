@@ -10,3 +10,15 @@ function readOrders(orders){
     });
 }
 readOrders(orders);
+//添加数据到文件中
+function addOrder(orders){
+
+}
+//修改文件中指定的数据
+function modifyOrders(key){
+
+}
+//删除文件中的指定数据
+function delOrders(key){
+    
+}
