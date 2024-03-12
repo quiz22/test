@@ -16,16 +16,16 @@
             var _config = {
                 type: 'get',
                 dataType: 'JSON',
-                success: function(){
+                success: function(data){
                     def.resolve(data);
                 },
                 error: function(a,b,err){
                     def.reject(err);
-                }
+            }
             }
             $.extend(_config,option,true);
             $.ajax(_config);
-            return def.progress();
+            return def.promise();
         }
         var option = {
             url: './city.json'
