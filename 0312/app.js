@@ -1,3 +1,4 @@
+const { log } = require('console');
 var fs = require('fs');
 let orders = [];//保存从文件中读取的数据
 
@@ -25,8 +26,19 @@ let goods =[
 ]
 
 //添加数据到文件中
-function addOrder(orders){
-
+function addOrder(goods){
+    fs.readFile('./order.json','utf-8',(err,data)=>{
+        if(err) throw err;
+        GlobalOrders = JSON.parse(data);
+        console.log('添加写入前：');
+        console.log(GlobalOrders); 
+        for(var g of goods){
+            GlobalOrders.push(g);
+        }
+        console.log('添加写入后：');
+        console.log(GlobalOrders);
+        fs.writeFile('./order.json')
+    });
 }
 //修改文件中指定的数据
 function modifyOrders(key){
