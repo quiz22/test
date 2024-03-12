@@ -5,8 +5,8 @@ let orders = [];//保存从文件中读取的数据
 function readOrders(orders){
     fs.readFile('./order.json','utf-8',(err,data)=>{
         if(err) throw err;
-        orders = JSON.parse(data); 
+        orders = JSON.parse(data);
+        console.log(orders); 
     });
 }
 readOrders(orders);
-console.log(orders);
