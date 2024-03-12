@@ -1,12 +1,1 @@
-[
-    {
-        "gId": "001",
-        "goodName": "华为手机",
-        "gPrice": 9999
-    },
-    {
-        "gId": "002",
-        "goodName": "联想笔记本电脑",
-        "gPrice": 10999
-    }
-]
+[{"gId":"001","goodName":"华为手机","gPrice":9999},{"gId":"002","goodName":"联想笔记本电脑","gPrice":10999},{"gId":"003","goodName":"大疆无人机","gPrice":5888},{"gId":"004","goodName":"比亚迪海豹","gPrice":225888}]

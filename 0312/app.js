@@ -37,7 +37,9 @@ function addOrder(goods){
         }
         console.log('添加写入后：');
         console.log(GlobalOrders);
-        fs.writeFile('./order.json')
+        fs.writeFile('./order.json',JSON.stringify(GlobalOrders),(err)=>{
+            if(err) throw err;
+        });
     });
 }
 //修改文件中指定的数据
