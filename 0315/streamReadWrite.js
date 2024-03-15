@@ -6,6 +6,7 @@ var writre = fs.createWriteStream('dataWrite.txt');
 
 var data = '';
 var cnt = 0;
+var start = new Date();
 
 readStream.on('data',(chunk)=>{
     data += chunk;
@@ -19,7 +20,9 @@ readStream.on('close',()=>{
 });
 
     writre.on('finish',()=>{
-    console.log('写入完毕');
+        var endTime = new Date();
+        var diff = (endTime - start);
+    console.log('写入完毕,耗时：'+ diff);
 });
 
 console.log('程序执行完毕');
