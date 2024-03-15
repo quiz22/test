@@ -11,9 +11,11 @@ readStream.on('data',(chunk)=>{
     cnt++;
     console.log('第'+cnt+'次得到数据块，共'+chunk.length+'字节；');
 
-    writre.write(data,'utf-8');
+    writre.write(chunk,'utf-8');
 });
-readStream.on('close')
+readStream.on('close',()=>{
+    writre.end();
+});
     writre.on('finish',()=>{
     console.log('写入完毕');
 });
