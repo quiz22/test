@@ -11,7 +11,19 @@
 </body>
 <script>
     $.ajax({
-        url: 'http://localhost:8080'
+        url: 'http://localhost:8080'}).then(res=>{
+            var data = JSON.stringify(res).locality;
+            var provinces = data.provinces[0].province;
+            var citys = data/citys[0].citys;
+            console.log(data);
+            for(var i in provinces){
+                var li = document.createElement('li');
+                li.innerHTML = provinces[i].$.text;
+                var ul = document.createElement('ul');
+                $('#citys').append(li);
+                // $('#citys').append('<li class="item">' + data[i].$.text + '</li>')
+            }
+            console.log('我饿了，print几个虚拟食物字母给大家吧');
     });
 </script>
 </html>
