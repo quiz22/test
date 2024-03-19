@@ -12,11 +12,11 @@ server.on('request',(req,res)=>{
     // 响应端
     // res.statusCode = 404;
     // res.statusMessage = 'not found';
-    // res.setHeader('Content-Type','text/plain; charset=utf-8')
+    res.setHeader('Content-Type','text/plain; charset=utf-8')
 
-    res.writeHead(404,'not found',{
-        'Content-Type':'text/plain; charset=utf-8'
-    });
+    // res.writeHead(404,'not found',{
+    //     'Content-Type':'text/plain; charset=utf-8'
+    // });
     res.write('这里服务器反馈信息');
     res.write('这里服务器第二次反馈信息');
     res.end();
