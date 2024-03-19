@@ -8,9 +8,16 @@ server.on('request',(req,res)=>{
     // console.log(req.httpVersion);
     // console.log(req.method);
     // console.log(req.url);
-    res.statusCode = 404;
-    res.statusMessage = 'not found';
-    res.setHeader('Content-Type','text/plain; charset=utf-8')
+
+    // 相应端
+    // res.statusCode = 404;
+    // res.statusMessage = 'not found';
+    // res.setHeader('Content-Type','text/plain; charset=utf-8')
+
+    res.writeHead(404,'not found',{
+        'Content-Type':'text/plain; charset=utf-8'
+    });
+    res.write('这里服务器反馈信息')
     res.end();
 });
 server.listen(8080,()=>{
