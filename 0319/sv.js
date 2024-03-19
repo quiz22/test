@@ -10,6 +10,7 @@ server.on('request',(req,res)=>{
     console.log(req.url);
     res.statusCode = 404;
     res.statusMessage = 'not found';
+    res.setHeader('Content-Type','text/plain; charset=utf-8')
     res.end();
 });
 server.listen(8080,()=>{
