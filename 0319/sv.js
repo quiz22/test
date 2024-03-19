@@ -8,6 +8,8 @@ server.on('request',(req,res)=>{
     console.log(req.httpVersion);
     console.log(req.method);
     console.log(req.url);
+    res.statusCode = 404;
+    res.statusMessage = 'not found';
     res.end();
 });
 server.listen(8080,()=>{
