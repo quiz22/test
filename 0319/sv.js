@@ -3,11 +3,11 @@ const http = require('http');
 var server = http.createServer();
 
 server.on('request',(req,res)=>{
-    console.log(req.headers);
-    console.log(req.rawHeaders);
-    console.log(req.httpVersion);
-    console.log(req.method);
-    console.log(req.url);
+    // console.log(req.headers);
+    // console.log(req.rawHeaders);
+    // console.log(req.httpVersion);
+    // console.log(req.method);
+    // console.log(req.url);
     res.statusCode = 404;
     res.statusMessage = 'not found';
     res.setHeader('Content-Type','text/plain; charset=utf-8')
