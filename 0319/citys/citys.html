@@ -14,12 +14,21 @@
         url: 'http://localhost:8080'}).then(res=>{
             var data = JSON.stringify(res).locality;
             var provinces = data.provinces[0].province;
-            var citys = data/citys[0].citys;
+            var citys = data.citys[0].citys;
             console.log(data);
             for(var i in provinces){
+
                 var li = document.createElement('li');
                 li.innerHTML = provinces[i].$.text;
+
                 var ul = document.createElement('ul');
+                for(var j in citys){
+                    if(citys[j].$.id === provinces[i].$.id){
+                        var li = document.createElement('li');
+                        li.innerHTML = citys[j].$.name;
+                    }
+                }
+
                 $('#citys').append(li);
                 // $('#citys').append('<li class="item">' + data[i].$.text + '</li>')
             }
