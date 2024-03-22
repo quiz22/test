@@ -9,3 +9,5 @@ git config --global user.email "123@qq.com"
 git clone https://github.com/quiz22/test.git
 
 git config --global http.sslVerify “false”
+
+ipconfig /flushdns
