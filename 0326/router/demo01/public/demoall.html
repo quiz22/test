@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./javascripts/jquery.js"></script>
+</head>
+<body>
+    <button id="btn">提交</button>
+</body>
+<script>
+    $('#btn').click(function () {
+        $.ajax({
+            url: 'http://localhost:3000/demoall',
+            method: 'POST',
+            data: {}
+        }).then((res) => {
+            console.log(res);
+        });
+    });
+</script>
+</html>
