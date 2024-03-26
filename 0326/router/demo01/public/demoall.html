@@ -7,13 +7,16 @@
     <script src="./javascripts/jquery.js"></script>
 </head>
 <body>
+    <input type="text" name="pid" id="pid">
     <button id="btn">提交</button>
 </body>
 <script>
     $('#btn').click(function () {
         $.ajax({
-            url: 'http://localhost:3000/demoall',
+            url: 'http://localhost:3000/product/' + $('#pid').val(),
+            // url: 'http://localhost:3000/product/',
             method: 'POST',
+            //data: {$('#pid').val()}
             data: {}
         }).then((res) => {
             console.log(res);

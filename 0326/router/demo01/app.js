@@ -6,7 +6,8 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var productRoute = require('./routes/product');
+// 引入product.js中的router
+var productRouter = require('./routes/product');
 
 var app = express();
 
@@ -40,6 +41,8 @@ app.get('/users/:uid/movies/:mid',(req,res)=>{
 //   res.send('支持所有访问方式');
 // });
 
+// -----------------------------------------------------------------------------
+// 数组形式的执行函数
 var f0 = function(req,res,next){
   console.log('请求0返回');
   next();
@@ -54,7 +57,11 @@ var f2 = function(req,res,next){
   res.send('请求2返回');
 };
 
-// app.use('/demoall',(req,res,next)=>{
+// use放最后
+app.use('/demoall', [f0,f1,f2]);
+
+// 效果与上面的写法一致(推荐使用上面的写法) 组合写法
+// app.use('/demoall', (req,res,next)=>{
 //   console.log('请求0返回');
 //   next();
 // },(req,res,next)=>{
@@ -62,9 +69,7 @@ var f2 = function(req,res,next){
 //   next();
 // },(req,res,next)=>{
 //   res.send('请求2返回');
-// },)
-
-app.use('/demoall',f0,f1,f2);
+// });
 
 // -----------------------------------------------------------------------
 
@@ -80,7 +85,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/product', productRouter);
+// 进行挂载(挂载后就可以顺利访问product中的路由了)
+app.use('/product',productRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
