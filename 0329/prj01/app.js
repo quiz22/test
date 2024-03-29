@@ -10,7 +10,7 @@ var usersRouter = require('./routes/users');
 var app = express();
 
 
-function middleware(req,res,next){
+function getTimestamp(req,res,next){
   let t1 = Date.parse(new Date());
   let t2 = (new Date()).valueOf();
   let t3 = new Date().getTime();
