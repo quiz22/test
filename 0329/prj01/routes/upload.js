@@ -17,12 +17,18 @@ router.post('/',function(req,res,next){
     from.maxFileds = 1000;
     from.parse(req,function(err,fileds,files){
         var filesTemp = JSON.stringify(files,null,2);
+        console.log(filesTemp);
         if(err)
         console.log(err);
         else{
             var inputFile = files.inputFile[0];
-            
+            var uploadedPath = inputFile.path;
+            var destPath = './public/files/' + inputFile.originalFulename;
+            fs.rename(uploadedPath,destPath,function(err){
+                if(err) throw err;
+            });
         }
+        res.end();
     });
 });
 
