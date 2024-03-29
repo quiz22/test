@@ -6,7 +6,7 @@ var url = require('url');
 var fs =  require('fs');
 
 router.get('/',function(req,res,next){
-    res.sendFile('./view/index.html');
+    res.sendFile('../view/index.html');
     // next();
 });
 router.post('/',function(req,res,next){
