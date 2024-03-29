@@ -14,6 +14,7 @@ function middleware(req,res,next){
   let t1 = Date.parse(new Date());
   let t2 = (new Date()).valueOf();
   let t3 = new Date().getTime();
+  console.log(t1,t2,t3);
   next();
 };
 
@@ -27,6 +28,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(getTimestamp);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
