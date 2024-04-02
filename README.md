@@ -11,3 +11,6 @@ git clone https://github.com/quiz22/test.git
 git config --global http.sslVerify “false”
 
 ipconfig /flushdns
+
+npm install express -g
+npm install express-generator -g
