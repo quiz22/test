@@ -13,7 +13,15 @@ router.get('/checklogin',(req,res)=>{
 });
 
 router.post('/login',(req,res)=>{
-  
+  let user = req.body.username;
+  let pass = req.body.password;
+
+  let users = fs.readFileSync(resolve(__dirname,'../public/data/user.json'));
+  users = JSON.parse(users);
+
+  for(var i = 0; i < users.length; i++){
+
+  }
 });
 
 module.exports = router;
