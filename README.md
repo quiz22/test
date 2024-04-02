@@ -14,3 +14,7 @@ ipconfig /flushdns
 
 npm install express -g
 npm install express-generator -g
+
+//利用express创建一个login文件夹
+express login 
+
