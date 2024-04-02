@@ -7,6 +7,38 @@
 </head>
 <script src="js/jquery.js"></script>
 <body>
-    
+    <form action="">
+        <p>
+            <h3>湖南幼专请您登录</h3>
+        </p>
+        <p>
+            <label for="username">用户名：</label>
+            <input type="tel" name="username" id="username" placeholder="请输入您的用户名">
+        </p>
+        <p>
+            <label for="password">密&nbsp;&nbsp;&nbsp;码：</label>
+            <input type="password" name="passowrd" id="passowrd" placeholder="请输入您的密码">
+        </p>
+        <p>
+            <input type="button" value="登录" id="btnLogin">
+        </p>
+    </form>
 </body>
+<script>
+    $('#btnLogin').click(function(){
+        $.ajax({
+            type: 'POST',
+            url: '/login',
+            data: $('form').serialize()
+        }).then(function(res){
+            if(res.msg === 'ok'){
+                window.location.href = './index.html'
+            }else{
+                alert('您输入的账号或密码错误，请重新输入！');
+                $('#password').val('');
+                $('#username').val('').focus();
+            }
+        });
+    });
+</script>
 </html>
