@@ -20,7 +20,22 @@ router.post('/login',(req,res)=>{
   users = JSON.parse(users);
 
   for(var i = 0; i < users.length; i++){
-
+    if(users[i].userName === user && users[i].password === password){
+      res.cookie('userName',user,{
+        maxAge: 3600000,
+        httpOnly: true
+      });
+      res.send({
+        code: 0,
+        msg: 'ok'
+      });
+    }
+    if(i === users.length){
+      res.send({
+        code: 1,
+        msg: 'error'
+      });
+    }
   }
 });
 

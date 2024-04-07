@@ -7,11 +7,11 @@
     {
         "id": "002",
         "username": "admin2",
-        "password": "admin"
+        "password": "admin2"
     },
     {
         "id": "003",
         "username": "admin3",
-        "password": "admin"
+        "password": "admin3"
     }
 ]
