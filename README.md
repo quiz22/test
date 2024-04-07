@@ -13,8 +13,14 @@ git config --global http.sslVerify “false”
 ipconfig /flushdns
 
 npm install express -g
+
 npm install express-generator -g
 
 //利用express创建一个login文件夹
 express login 
 
+//启动express项目
+npm start
+
+//启动js项目
+node 文件名.js

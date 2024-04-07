@@ -29,13 +29,14 @@ router.post('/login',(req,res)=>{
         code: 0,
         msg: 'ok'
       });
+       break;
     }
-    if(i === users.length){
-      res.send({
-        code: 1,
-        msg: 'error'
-      });
-    }
+  }
+  if(i === users.length){
+    res.send({
+      code: 1,
+      msg: 'error'
+    });
   }
 });
 
