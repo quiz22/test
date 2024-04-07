@@ -1,3 +1,4 @@
+const { log } = require('console');
 var express = require('express');
 var router = express.Router();
 var fs = require('fs');
@@ -19,9 +20,11 @@ router.post('/login',(req,res)=>{
   let users = fs.readFileSync(resolve(__dirname,'../public/data/user.json'));
   users = JSON.parse(users);
 
+  console.log(users);
+
   for(var i = 0; i < users.length; i++){
-    if(users[i].userName === user && users[i].password === password){
-      res.cookie('userName',user,{
+    if(users[i].username === user && users[i].password === password){
+      res.cookie('userName', user, {
         maxAge: 3600000,
         httpOnly: true
       });
