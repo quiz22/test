@@ -24,3 +24,9 @@ npm start
 
 //启动js项目
 node 文件名.js
+
+//安装pug
+npm install pug-cli -g
+
+//生产一个pug版的HTML文件   tips:要提前创建好有内容的pugdemo.pug文件才能生成HTML文件，后缀加-P是未压缩的
+pug pugdemo.pug
