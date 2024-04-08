@@ -1,0 +1,37 @@
+doctype html 
+html
+    head 
+        title 标签属性
+    body 
+        div(class="box") this is a div element
+        - var bool = true 
+        div(class = bool?"true":"false")
+        input(
+            type = "text"
+            class = "username"
+            name = "username"
+            id = "username"
+        )
+        input(type="checkbox",checked)
+        p(style="color:#999999; font-size:18px")
+        h2(style={color:"#666666","font-size":"20px"})
+        .foo 
+        .foo.bar
+        div(class="foo bar")
+        #box1 
+
+        -var txt = "湖南幼专"
+        p 这是一段文字 #{txt}
+
+
+        - for(var i=0;i<3;i++)
+            li item#{i}
+
+
+        script. 
+            var txt='北京'
+            if(txt){
+                console.log(txt) 
+            }else{
+                console.log('undefine') 
+            }
