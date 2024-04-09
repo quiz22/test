@@ -1,0 +1,12 @@
+doctype html 
+html 
+    head 
+        meta(charset='utf-8')
+        title 商品页面（基于pug）
+    body 
+        ul 
+            each val in data 
+                li 
+                    img(src=val.img)
+                    .title #{val.title} 
+                    .price #[span(style="color:red;")] #{val.price}元

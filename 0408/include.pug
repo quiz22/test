@@ -1,0 +1,9 @@
+extends public 
+block content
+    mixin show(name,...shows)
+        p = name 
+        ul 
+            each show in shows
+                li = show 
+        
+    +show('binge','唱歌','跳舞','睡觉')
