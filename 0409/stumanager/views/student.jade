@@ -21,7 +21,13 @@ block content
             input(type="text", name="sBirthday", placeholder="XXXX-XX-XX")
         p 
             label(for="class") 班级：
-            input(type="text", name="class")
+            select(name="class") 
+                option(value="20031")
+                    |20031 
+            option(value="20032")
+                    |20032 
+            option(value="20033")
+                    |20033                    
         p 
             input(type="button", value="添加学生" id="btnAdd")
     
