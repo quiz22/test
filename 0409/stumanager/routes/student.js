@@ -30,9 +30,44 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/add',(req,res)=>{
-    console.log(req,body);
+    var conn = mysql.createConnection({
+        host:'localhost',
+        user:'root',
+        password:'123456',
+        database:'stumanager'
+    })
+    conn.connect(err=>{
+        if(err) console.error('连接错误' + err.stack);
+        else console.log('连接成功！ID：' + conn.threadId);
+    });
+
+    // console.log(req,body);
+    
+    var stu = {
+        sNO:req.body.sNO,
+        sName: req.body.sName,
+        sSex: req.body.sSex,
+        sBirthday: req.body.sBirthday,
+        class: req.body.class,
+    }
+
+    var sql = "insert into student (sNo,sName,sSex,sBirthday,class) values ('" + stu.sNo + "'+',' "+stu.sName+"' , '" + stu.sSex+"', '" + stu.sBirthday+"','" + stu.class+"')"
+    conn.query(sql,(err,result)=>{
+        if(err){
+            console.log('添加数据错误！\n'+err.message);
+            res.send({
+                code:1,
+                msg:'添加数据错误'
+            })
+        }else{
+            res.send({
+                code:0,
+                msg:'OK'
+            })
+        }
+    })
     res.send({
-        
+
     })
 });
 
