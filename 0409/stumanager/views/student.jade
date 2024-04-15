@@ -1,0 +1,46 @@
+extends layout 
+block content 
+    form#frmAppend(action="")
+        p 
+            h3 学生信息录入
+        p 
+            label(for="sNo") 学号：
+            input(type="text", name="sNo", placeholder="请输入学号")
+        p 
+            label(for="sName") 姓名：
+            input(type="text", name="sName", placeholder="请输入姓名")
+        p 
+            label(for="sSex") 性别：
+            span.rdbSex
+                input(type="radio", name="sSex", value='男') 
+                span 男
+                input(type="radio", name="sSex", value='女') 
+                span 女
+        p 
+            label(for="sBirthday") 出生日期：
+            input(type="text", name="sBirthday", placeholder="XXXX-XX-XX")
+        p 
+            label(for="class") 班级：
+            input(type="text", name="class")
+        p 
+            input(type="button", value="添加学生")
+    
+    h1=title 
+    table 
+        tr 
+            th 学号
+            th 姓名
+            th 性别
+            th 出生日期
+            th 班级
+            th 操作
+        each stu in students 
+            tr 
+                td #{stu.sNo}
+                td #{stu.sName }
+                td #{stu.sSex }
+                td #{stu.sBirthday.getFullYear() + '年' + (stu.sBirthday.getMonth() + 1) + '月' + stu.sBirthday.getDate() + '日'}
+                td #{stu.class }
+                td 
+                    a(href='#') 编辑
+                    a(href='#') 删除
