@@ -29,6 +29,12 @@ router.get('/', function(req, res, next) {
     });
 });
 
+router.post('/add',(req,res)=>{
+    console.log(req,body);
+    res.send({
+        
+    })
+});
 
 
 module.exports = router;
