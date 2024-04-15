@@ -53,6 +53,7 @@ router.post('/add',(req,res)=>{
 
     var sql = "insert into student (sNo,sName,sSex,sBirthday,class) values ('" + stu.sNo + "'+',' "+stu.sName+"' , '" + stu.sSex+"', '" + stu.sBirthday+"','" + stu.class+"')"
     conn.query(sql,(err,result)=>{
+        conn:end();
         if(err){
             console.log('添加数据错误！\n'+err.message);
             res.send({
